@@ -179,24 +179,35 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
   section { padding: 50px 0; }
 }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+
+.nav-end { display: flex; align-items: center; gap: 10px; }
+.lang-btn { font: inherit; font-size: 13.5px; font-weight: 700; color: var(--text); background: rgba(255, 255, 255, .05); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; cursor: pointer; min-width: 46px; }
+.lang-btn:hover { border-color: #3a404c; }
+html[lang=en] body { font-family: "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif; }
+html[lang=en] .logo small { text-align: left; }
+html[lang=en] .phone { left: auto; right: -22px; }
+html[lang=en] .laptop { transform: perspective(1400px) rotateY(-8deg); }
+@media (max-width: 960px) { html[lang=en] .laptop { transform: none; } }
+@media (max-width: 600px) { html[lang=en] .phone { right: -4px; } }
 </style>
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap">
-    <a class="logo" href="#top"><span class="logo-mark">س</span><span><b>سليمان</b><small>ERP &amp; POS Systems</small></span></a>
+    <a class="logo" href="#top"><span class="logo-mark" data-t="mark">س</span><span><b><span data-t="t0">سليمان</span></b><small>ERP &amp; POS Systems</small></span></a>
     <nav class="nav-links">
-      <a href="#work">الأنظمة</a>
-      <a href="#features">المميزات</a>
-      <a href="#ai">المساعد الذكي</a>
-      <a href="#how">إزاي بنشتغل</a>
-      <a href="#contact">تواصل</a>
+      <a href="#work"><span data-t="t1">الأنظمة</span></a>
+      <a href="#features"><span data-t="t2">المميزات</span></a>
+      <a href="#ai"><span data-t="t3">المساعد الذكي</span></a>
+      <a href="#how"><span data-t="t4">إزاي بنشتغل</span></a>
+      <a href="#contact"><span data-t="t5">تواصل</span></a>
     </nav>
+    <div class="nav-end"><button type="button" class="lang-btn" id="lang-btn" aria-label="English">EN</button>
     <a class="btn btn-wa" href="https://wa.me/201028715353?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.1z"/></svg>
-      <span>كلمني واتساب</span>
-    </a>
+      <span><span data-t="t6">كلمني واتساب</span></span>
+    </a></div>
   </div>
 </header>
 
@@ -205,18 +216,18 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
   <section class="hero">
     <div class="wrap">
       <div class="reveal">
-        <span class="pill"><i></i> أنظمة شغالة فعلاً في محلات</span>
-        <h1>سيستم كاشير و ERP<br><span class="grad">على مقاس محلك</span></h1>
-        <p class="lead">بعمل أنظمة بيع ومخزون وحسابات للمحلات والشركات: بيع بالباركود، مرتجعات، مصروفات وأرباح، تطبيق موبايل، ومساعد ذكي بيفهم عربي. كل سيستم بشكل وهوية محلك.</p>
+        <span class="pill"><i></i><span data-t="t7"> أنظمة شغالة فعلاً في محلات</span></span>
+        <h1><span data-t="t8">سيستم كاشير و ERP<br><span class="grad">على مقاس محلك</span></span></h1>
+        <p class="lead"><span data-t="t9">بعمل أنظمة بيع ومخزون وحسابات للمحلات والشركات: بيع بالباركود، مرتجعات، مصروفات وأرباح، تطبيق موبايل، ومساعد ذكي بيفهم عربي. كل سيستم بشكل وهوية محلك.</span></p>
         <div class="hero-cta">
-          <a class="btn btn-main" href="#work">شوف الأنظمة وجرّبها</a>
-          <a class="btn btn-ghost" href="#contact">اطلب سيستم لمحلك</a>
+          <a class="btn btn-main" href="#work"><span data-t="t10">شوف الأنظمة وجرّبها</span></a>
+          <a class="btn btn-ghost" href="#contact"><span data-t="t11">اطلب سيستم لمحلك</span></a>
         </div>
         <div class="stats">
-          <div class="stat"><b>+3</b><span>أنظمة جاهزة</span></div>
-          <div class="stat"><b>100%</b><span>من غير إنترنت</span></div>
-          <div class="stat"><b>📱</b><span>تطبيق أندرويد</span></div>
-          <div class="stat"><b>✨</b><span>مساعد ذكي</span></div>
+          <div class="stat"><b data-t="plus">+3</b><span><span data-t="t12">أنظمة جاهزة</span></span></div>
+          <div class="stat"><b>100%</b><span><span data-t="t13">من غير إنترنت</span></span></div>
+          <div class="stat"><b>📱</b><span><span data-t="t14">تطبيق أندرويد</span></span></div>
+          <div class="stat"><b>✨</b><span><span data-t="t15">مساعد ذكي</span></span></div>
         </div>
       </div>
       <div class="devices reveal">
@@ -230,30 +241,30 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
   <section id="work">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">الأنظمة</div>
-        <h2>أنظمة اتعملت لمحلات حقيقية</h2>
-        <p>كل سيستم ليه نسخة تجريبية أونلاين — ادخل بضغطة وجرّب البيع والتقارير بنفسك.</p>
+        <div class="kicker"><span data-t="t1">الأنظمة</span></div>
+        <h2><span data-t="t16">أنظمة اتعملت لمحلات حقيقية</span></h2>
+        <p><span data-t="t17">كل سيستم ليه نسخة تجريبية أونلاين — ادخل بضغطة وجرّب البيع والتقارير بنفسك.</span></p>
       </div>
 
       <article class="project reveal" style="--p:#c0283a">
         <div class="shots" data-sys="milano">
           <div class="shot-main"><img src="img/milano-pos.jpg" alt="ميلانو — الكاشير" loading="lazy"></div>
-          <div class="shot-tabs"><button class="on" data-img="pos">الكاشير</button><button data-img="profit">الأرباح</button><button data-img="login">الدخول</button></div>
+          <div class="shot-tabs"><button class="on" data-img="pos"><span data-t="t18">الكاشير</span></button><button data-img="profit"><span data-t="t19">الأرباح</span></button><button data-img="login"><span data-t="t20">الدخول</span></button></div>
         </div>
         <div>
-          <span class="p-type">محل ملابس</span>
-          <h3>ميلانو — سيستم محل هدوم</h3>
-          <p>تصميم أبيض وأسود بلمسة أحمر إيطالي. كل قطعة بمقاسها ولونها ومخزونها، والفاتورة بتطبع <span dir="rtl" style="unicode-bidi:isolate;white-space:nowrap">"قميص — L / أبيض"</span>.</p>
+          <span class="p-type"><span data-t="t21">محل ملابس</span></span>
+          <h3><span data-t="t22">ميلانو — سيستم محل هدوم</span></h3>
+          <p><span data-t="t23">تصميم أبيض وأسود بلمسة أحمر إيطالي. كل قطعة بمقاسها ولونها ومخزونها، والفاتورة بتطبع <span dir="rtl" style="unicode-bidi:isolate;white-space:nowrap">"قميص — L / أبيض"</span>.</span></p>
           <ul class="feat">
-            <li>مقاسات وألوان لكل قطعة</li>
-            <li>زرار "مقاس تاني" بضغطة</li>
-            <li>بحث بالاسم أو المقاس أو اللون</li>
-            <li>مساعد ذكي بالعامية</li>
-            <li>كاش / فيزا / تحويل / محفظة</li>
-            <li>تقارير أرباح ومصروفات</li>
+            <li><span data-t="t24">مقاسات وألوان لكل قطعة</span></li>
+            <li><span data-t="t25">زرار "مقاس تاني" بضغطة</span></li>
+            <li><span data-t="t26">بحث بالاسم أو المقاس أو اللون</span></li>
+            <li><span data-t="t27">مساعد ذكي بالعامية</span></li>
+            <li><span data-t="t28">كاش / فيزا / تحويل / محفظة</span></li>
+            <li><span data-t="t29">تقارير أرباح ومصروفات</span></li>
           </ul>
           <div class="p-actions">
-            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/milano-store/" target="_blank" rel="noopener">جرّب النسخة التجريبية ↗</a>
+            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/milano-store/" target="_blank" rel="noopener"><span data-t="t30">جرّب النسخة التجريبية ↗</span></a>
             <div class="swatches"><i style="background:#141414"></i><i style="background:#f4f2ee"></i><i style="background:#b4232c"></i></div>
           </div>
         </div>
@@ -262,22 +273,22 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
       <article class="project reveal" style="--p:#c08f42">
         <div class="shots" data-sys="gallery">
           <div class="shot-main"><img src="img/gallery-pos.jpg" alt="جاليري — الكاشير" loading="lazy"></div>
-          <div class="shot-tabs"><button class="on" data-img="pos">الكاشير</button><button data-img="profit">الأرباح</button><button data-img="login">الدخول</button></div>
+          <div class="shot-tabs"><button class="on" data-img="pos"><span data-t="t18">الكاشير</span></button><button data-img="profit"><span data-t="t19">الأرباح</span></button><button data-img="login"><span data-t="t20">الدخول</span></button></div>
         </div>
         <div>
-          <span class="p-type">جاليري أدوات منزلية وهدايا</span>
-          <h3>جاليري أحمد عجور</h3>
-          <p>كحلي ودهبي بشكل فخم. بيع بالباركود، مخزون بيتظبط لوحده، ومساعد ذكي تقوله "دفعت كهربا 850" يسجلها على طول.</p>
+          <span class="p-type"><span data-t="t31">جاليري أدوات منزلية وهدايا</span></span>
+          <h3><span data-t="t32">جاليري أحمد عجور</span></h3>
+          <p><span data-t="t33">كحلي ودهبي بشكل فخم. بيع بالباركود، مخزون بيتظبط لوحده، ومساعد ذكي تقوله "دفعت كهربا 850" يسجلها على طول.</span></p>
           <ul class="feat">
-            <li>تطبيق أندرويد شغال من غير نت</li>
-            <li>فتح من الموبايل بـ QR</li>
-            <li>درج فلوس بيفتح مع الكاش</li>
-            <li>مرتجعات واستبدال</li>
-            <li>مصروفات ثابتة ومتغيرة</li>
-            <li>صلاحيات مدير وكاشير</li>
+            <li><span data-t="t34">تطبيق أندرويد شغال من غير نت</span></li>
+            <li><span data-t="t35">فتح من الموبايل بـ QR</span></li>
+            <li><span data-t="t36">درج فلوس بيفتح مع الكاش</span></li>
+            <li><span data-t="t37">مرتجعات واستبدال</span></li>
+            <li><span data-t="t38">مصروفات ثابتة ومتغيرة</span></li>
+            <li><span data-t="t39">صلاحيات مدير وكاشير</span></li>
           </ul>
           <div class="p-actions">
-            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/gallery-store/" target="_blank" rel="noopener">جرّب النسخة التجريبية ↗</a>
+            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/gallery-store/" target="_blank" rel="noopener"><span data-t="t30">جرّب النسخة التجريبية ↗</span></a>
             <div class="swatches"><i style="background:#16182a"></i><i style="background:#b8873a"></i><i style="background:#f5f2ec"></i></div>
           </div>
         </div>
@@ -286,22 +297,22 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
       <article class="project reveal" style="--p:#4f8cff">
         <div class="shots" data-sys="soliman">
           <div class="shot-main"><img src="img/soliman-pos.jpg" alt="سليمان كاشير — الكاشير" loading="lazy"></div>
-          <div class="shot-tabs"><button class="on" data-img="pos">الكاشير</button><button data-img="profit">الأرباح</button><button data-img="login">الدخول</button></div>
+          <div class="shot-tabs"><button class="on" data-img="pos"><span data-t="t18">الكاشير</span></button><button data-img="profit"><span data-t="t19">الأرباح</span></button><button data-img="login"><span data-t="t20">الدخول</span></button></div>
         </div>
         <div>
-          <span class="p-type">سوبر ماركت وبقالة</span>
-          <h3>سليمان كاشير</h3>
-          <p>سيستم سريع بثيم غامق للسوبر ماركت: امسح الباركود واضغط Enter، والفاتورة الكبيرة في نص الشاشة. Enter للبيع و F9 للبيع والطباعة.</p>
+          <span class="p-type"><span data-t="t40">سوبر ماركت وبقالة</span></span>
+          <h3><span data-t="t41">سليمان كاشير</span></h3>
+          <p><span data-t="t42">سيستم سريع بثيم غامق للسوبر ماركت: امسح الباركود واضغط Enter، والفاتورة الكبيرة في نص الشاشة. Enter للبيع و F9 للبيع والطباعة.</span></p>
           <ul class="feat">
-            <li>بيع بالباركود أو بالاسم</li>
-            <li>"صنف بسعر" لأي حاجة من غير باركود</li>
-            <li>طباعة فاتورة 80مم أو A4</li>
-            <li>كذا كاشير على كذا جهاز</li>
-            <li>تقرير مين شغال دلوقتي</li>
-            <li>برنامج على الديسكتوب بأيقونة</li>
+            <li><span data-t="t43">بيع بالباركود أو بالاسم</span></li>
+            <li><span data-t="t44">"صنف بسعر" لأي حاجة من غير باركود</span></li>
+            <li><span data-t="t45">طباعة فاتورة 80مم أو A4</span></li>
+            <li><span data-t="t46">كذا كاشير على كذا جهاز</span></li>
+            <li><span data-t="t47">تقرير مين شغال دلوقتي</span></li>
+            <li><span data-t="t48">برنامج على الديسكتوب بأيقونة</span></li>
           </ul>
           <div class="p-actions">
-            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/pos-system/" target="_blank" rel="noopener">جرّب النسخة التجريبية ↗</a>
+            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/pos-system/" target="_blank" rel="noopener"><span data-t="t30">جرّب النسخة التجريبية ↗</span></a>
             <div class="swatches"><i style="background:#0f1117"></i><i style="background:#4f8cff"></i><i style="background:#3ccf73"></i></div>
           </div>
         </div>
@@ -313,20 +324,20 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
   <section id="features" style="background:var(--bg-2)">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">في كل سيستم</div>
-        <h2>كل اللي المحل محتاجه في مكان واحد</h2>
-        <p>من أول ما الزبون يدفع لحد ما تعرف كسبت كام آخر الشهر.</p>
+        <div class="kicker"><span data-t="t49">في كل سيستم</span></div>
+        <h2><span data-t="t50">كل اللي المحل محتاجه في مكان واحد</span></h2>
+        <p><span data-t="t51">من أول ما الزبون يدفع لحد ما تعرف كسبت كام آخر الشهر.</span></p>
       </div>
       <div class="grid">
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10.5 8v8M14 8v8M17 8v8"/></svg></div><h4>بيع سريع بالباركود</h4><p>امسح واضغط Enter. أو اكتب أول حرفين من الاسم والمنتج يطلع.</p></div>
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div><h4>مخزون بيتظبط لوحده</h4><p>كل بيعة ومرتجع بيعدّل الكمية، وتنبيه للحاجات اللي قربت تخلص.</p></div>
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h4>أرباح ومصروفات</h4><p>إيجار ومرتبات وكهربا، وتقرير يقولك كسبت كام في اليوم والأسبوع والشهر.</p></div>
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg></div><h4>مرتجعات واستبدال</h4><p>دوّر برقم الفاتورة أو كود المنتج، ورجّع فلوس أو بدّل بفرق السعر.</p></div>
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></div><h4>مستخدمين وصلاحيات</h4><p>مدير وكاشير، كل واحد بباسورده، وتشوف مين شغال على أنهي جهاز.</p></div>
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div><h4>موبايل وتطبيق أندرويد</h4><p>افتح السيستم من الموبايل بـ QR على واي فاي المحل، أو تطبيق شغال لوحده من غير نت.</p></div>
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></div><h4>طباعة ودرج فلوس</h4><p>فاتورة حرارية 80مم أو A4، والدرج بيفتح لوحده لما الدفع يكون كاش.</p></div>
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.5 12 4l7 8.5"/><path d="M7 11v9h10v-9"/></svg></div><h4>من غير إنترنت</h4><p>السيستم شغال على كمبيوتر المحل نفسه، والبيانات عندك إنت مش على سيرفر بره.</p></div>
-        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h4>برنامج على الديسكتوب</h4><p>أيقونة على سطح المكتب وتسطيب بضغطة، وتحديث من غير ما البيانات تضيع.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10.5 8v8M14 8v8M17 8v8"/></svg></div><h4><span data-t="t52">بيع سريع بالباركود</span></h4><p><span data-t="t53">امسح واضغط Enter. أو اكتب أول حرفين من الاسم والمنتج يطلع.</span></p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div><h4><span data-t="t54">مخزون بيتظبط لوحده</span></h4><p><span data-t="t55">كل بيعة ومرتجع بيعدّل الكمية، وتنبيه للحاجات اللي قربت تخلص.</span></p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h4><span data-t="t56">أرباح ومصروفات</span></h4><p><span data-t="t57">إيجار ومرتبات وكهربا، وتقرير يقولك كسبت كام في اليوم والأسبوع والشهر.</span></p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg></div><h4><span data-t="t37">مرتجعات واستبدال</span></h4><p><span data-t="t58">دوّر برقم الفاتورة أو كود المنتج، ورجّع فلوس أو بدّل بفرق السعر.</span></p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></div><h4><span data-t="t59">مستخدمين وصلاحيات</span></h4><p><span data-t="t60">مدير وكاشير، كل واحد بباسورده، وتشوف مين شغال على أنهي جهاز.</span></p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div><h4><span data-t="t61">موبايل وتطبيق أندرويد</span></h4><p><span data-t="t62">افتح السيستم من الموبايل بـ QR على واي فاي المحل، أو تطبيق شغال لوحده من غير نت.</span></p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></div><h4><span data-t="t63">طباعة ودرج فلوس</span></h4><p><span data-t="t64">فاتورة حرارية 80مم أو A4، والدرج بيفتح لوحده لما الدفع يكون كاش.</span></p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.5 12 4l7 8.5"/><path d="M7 11v9h10v-9"/></svg></div><h4><span data-t="t13">من غير إنترنت</span></h4><p><span data-t="t65">السيستم شغال على كمبيوتر المحل نفسه، والبيانات عندك إنت مش على سيرفر بره.</span></p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h4><span data-t="t66">برنامج على الديسكتوب</span></h4><p><span data-t="t67">أيقونة على سطح المكتب وتسطيب بضغطة، وتحديث من غير ما البيانات تضيع.</span></p></div>
       </div>
     </div>
   </section>
@@ -335,18 +346,18 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
   <section id="ai">
     <div class="wrap ai">
       <div class="reveal">
-        <div class="sec-head" style="text-align:right;margin:0"><div class="kicker">المساعد الذكي</div></div>
-        <h2>كلّم السيستم <span class="grad">بالعامية</span></h2>
-        <p>من غير ما تدوّر في القوايم: اكتب أو اتكلم، والمساعد يسجّل المصروف، يعدّل السعر، يزوّد المخزون، أو يقولك الأرباح كام — في ثانية.</p>
-        <a class="btn btn-ghost" href="https://mesalam1985-wq.github.io/milano-store/" target="_blank" rel="noopener">جرّبه في النسخة التجريبية ↗</a>
+        <div class="sec-head" style="text-align:start;margin:0"><div class="kicker"><span data-t="t3">المساعد الذكي</span></div></div>
+        <h2><span data-t="t68">كلّم السيستم <span class="grad">بالعامية</span></span></h2>
+        <p><span data-t="t69">من غير ما تدوّر في القوايم: اكتب أو اتكلم، والمساعد يسجّل المصروف، يعدّل السعر، يزوّد المخزون، أو يقولك الأرباح كام — في ثانية.</span></p>
+        <a class="btn btn-ghost" href="https://mesalam1985-wq.github.io/milano-store/" target="_blank" rel="noopener"><span data-t="t70">جرّبه في النسخة التجريبية ↗</span></a>
       </div>
       <div class="chat reveal" aria-label="مثال محادثة">
-        <div class="msg u">دفعت كهربا 850</div>
-        <div class="msg b">تمام ✅ سجلت مصروف <b>كهرباء 850 ج.م</b> بتاريخ النهارده.</div>
-        <div class="msg u">الأرباح كام الأسبوع ده؟</div>
-        <div class="msg b">صافي الربح الأسبوع ده <b>19,830 ج.م</b> — المبيعات 64,020 والمصروفات 4,170.</div>
-        <div class="msg u">إيه اللي قرب يخلص؟</div>
-        <div class="msg b">3 حاجات: فستان سواريه S (2)، جاكيت جلد L (4)، قميص كتان L كحلي (3).</div>
+        <div class="msg u"><span data-t="t71">دفعت كهربا 850</span></div>
+        <div class="msg b"><span data-t="t72">تمام ✅ سجلت مصروف <b>كهرباء 850 ج.م</b> بتاريخ النهارده.</span></div>
+        <div class="msg u"><span data-t="t73">الأرباح كام الأسبوع ده؟</span></div>
+        <div class="msg b"><span data-t="t74">صافي الربح الأسبوع ده <b>19,830 ج.م</b> — المبيعات 64,020 والمصروفات 4,170.</span></div>
+        <div class="msg u"><span data-t="t75">إيه اللي قرب يخلص؟</span></div>
+        <div class="msg b"><span data-t="t76">3 حاجات: فستان سواريه S (2)، جاكيت جلد L (4)، قميص كتان L كحلي (3).</span></div>
       </div>
     </div>
   </section>
@@ -355,14 +366,14 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
   <section id="how" style="background:var(--bg-2)">
     <div class="wrap">
       <div class="sec-head reveal">
-        <div class="kicker">إزاي بنشتغل</div>
-        <h2>من أول كلمة لحد ما السيستم يشتغل في المحل</h2>
+        <div class="kicker"><span data-t="t4">إزاي بنشتغل</span></div>
+        <h2><span data-t="t77">من أول كلمة لحد ما السيستم يشتغل في المحل</span></h2>
       </div>
       <div class="steps">
-        <div class="step reveal"><h4>بنتكلم</h4><p>تقولي نوع المحل وبتبيع إيه ومحتاج إيه بالظبط.</p></div>
-        <div class="step reveal"><h4>بصمم بهوية محلك</h4><p>اسمك وألوانك ولوجو المحل، وتجرّب نسخة تجريبية أونلاين.</p></div>
-        <div class="step reveal"><h4>بركّب في المحل</h4><p>على الكمبيوتر والموبايل، مع الطابعة والدرج والباركود.</p></div>
-        <div class="step reveal"><h4>دعم وتطوير</h4><p>أي حاجة جديدة محتاجها بنضيفها، وبياناتك محفوظة.</p></div>
+        <div class="step reveal"><h4><span data-t="t78">بنتكلم</span></h4><p><span data-t="t79">تقولي نوع المحل وبتبيع إيه ومحتاج إيه بالظبط.</span></p></div>
+        <div class="step reveal"><h4><span data-t="t80">بصمم بهوية محلك</span></h4><p><span data-t="t81">اسمك وألوانك ولوجو المحل، وتجرّب نسخة تجريبية أونلاين.</span></p></div>
+        <div class="step reveal"><h4><span data-t="t82">بركّب في المحل</span></h4><p><span data-t="t83">على الكمبيوتر والموبايل، مع الطابعة والدرج والباركود.</span></p></div>
+        <div class="step reveal"><h4><span data-t="t84">دعم وتطوير</span></h4><p><span data-t="t85">أي حاجة جديدة محتاجها بنضيفها، وبياناتك محفوظة.</span></p></div>
       </div>
     </div>
   </section>
@@ -371,20 +382,20 @@ footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 
   <section id="contact">
     <div class="wrap">
       <div class="contact reveal">
-        <h2>عايز سيستم لمحلك؟</h2>
-        <p>ابعتلي على أي حاجة من دول ونتكلم.</p>
+        <h2><span data-t="t86">عايز سيستم لمحلك؟</span></h2>
+        <p><span data-t="t87">ابعتلي على أي حاجة من دول ونتكلم.</span></p>
         <div class="socials">
-          <a class="soc wa" href="https://wa.me/201028715353?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.1z"/></svg>واتساب</a>
-          <a class="soc" href="https://www.facebook.com/share/1FXDF6YBbi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>فيسبوك</a>
-          <a class="soc" href="https://www.instagram.com/system8987" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#e4405f" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#e4405f"/></svg>إنستجرام</a>
-          <a class="soc" href="https://www.tiktok.com/@system.y5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg>تيك توك</a>
+          <a class="soc wa" href="https://wa.me/201028715353?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.1z"/></svg><span data-t="t88">واتساب</span></a>
+          <a class="soc" href="https://www.facebook.com/share/1FXDF6YBbi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg><span data-t="t89">فيسبوك</span></a>
+          <a class="soc" href="https://www.instagram.com/system8987" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#e4405f" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#e4405f"/></svg><span data-t="t90">إنستجرام</span></a>
+          <a class="soc" href="https://www.tiktok.com/@system.y5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg><span data-t="t91">تيك توك</span></a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<footer>© <span id="yr"></span> سليمان — ERP &amp; POS Systems</footer>
+<footer>© <span id="yr"></span> <span data-t="t0">سليمان</span> — ERP &amp; POS Systems</footer>
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
@@ -404,6 +415,34 @@ const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.
   if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
 }), { threshold: .12 }) : null;
 document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+
+// عربي / English
+const EN = {"plus": "3+", "t23": "Black and white with an Italian red accent. Every piece has its own size, color and stock, and the receipt prints &ldquo;Linen shirt — L / White&rdquo;.", "t9": "I build sales, inventory and accounting systems for shops and companies: barcode sales, returns, expenses and profit, a mobile app, and an AI assistant that understands Arabic. Every system carries your shop's look and brand.", "t69": "No digging through menus: type or speak, and the assistant records an expense, changes a price, adds stock or tells you your profit — in a second.", "t42": "A fast, dark-themed system for supermarkets: scan the barcode and press Enter, with a big invoice in the middle of the screen. Enter to sell, F9 to sell and print.", "t33": "Navy and gold, with a premium feel. Barcode sales, stock that updates itself, and an AI assistant: say &ldquo;paid 850 for electricity&rdquo; and it records it instantly.", "t62": "Open the system on your phone with a QR code over the shop Wi-Fi, or use a standalone offline app.", "t17": "Every system has a live online demo — log in with one click and try selling and the reports yourself.", "t74": "Net profit this week is <b>EGP 19,830</b> — sales 64,020, expenses 4,170.", "t65": "The system runs on the shop's own computer — your data stays with you, not on an outside server.", "t57": "Rent, salaries and bills, with a report of your profit per day, week and month.", "t67": "A desktop icon, one-click install, and updates that never lose your data.", "t76": "3 items: evening dress S (2), leather jacket L (4), navy linen shirt L (3).", "t58": "Find by invoice number or product code, then refund or exchange with the price difference.", "t64": "80mm thermal or A4 receipts, and the drawer opens by itself on cash payments.", "t8": "POS &amp; ERP systems<br><span class=\"grad\">built for your shop</span>", "t55": "Every sale and return updates the quantity, with alerts for items running low.", "t60": "Manager and cashier accounts with their own passwords — see who is working on which device.", "t53": "Scan and press Enter, or type the first letters of a name and the product appears.", "t72": "Done ✅ Recorded an expense: <b>Electricity EGP 850</b>, dated today.", "t81": "Your name, colors and logo — and you try a live online demo.", "t51": "From the moment a customer pays to knowing your profit at the end of the month.", "t83": "On the computer and phones, with the printer, drawer and barcode scanner.", "t68": "Talk to the system <span class=\"grad\">in plain words</span>", "t85": "Anything new you need gets added, and your data stays safe.", "t79": "You tell me your type of shop, what you sell and exactly what you need.", "t77": "From the first chat to the system running in your shop", "t44": "&ldquo;Custom item&rdquo; for anything without a barcode", "t50": "Everything a shop needs, in one place", "t87": "Message me on any of these and let's talk.", "t26": "Search by name, size or color", "t34": "Android app that works offline", "t48": "Desktop app with its own icon", "t7": " Systems running in real shops", "t70": "Try it in the demo ↗", "t16": "Systems built for real shops", "t28": "Cash / card / transfer / wallet", "t31": "Home goods &amp; gifts gallery", "t22": "Milano — clothing store system", "t30": "Try the live demo ↗", "t36": "Cash drawer opens on cash sales", "t43": "Sell by barcode or by name", "t45": "80mm or A4 receipt printing", "t73": "What's the profit this week?", "t24": "Sizes and colors per piece", "t25": "One-click &ldquo;add another size&rdquo;", "t46": "Several cashiers on several devices", "t29": "Profit and expense reports", "t35": "Open on your phone with a QR code", "t38": "Fixed and variable expenses", "t47": "See who is working right now", "t61": "Mobile &amp; Android app", "t66": "Desktop program", "t10": "See the systems &amp; try them", "t39": "Manager and cashier roles", "t27": "AI assistant in everyday Arabic", "t52": "Fast barcode sales", "t54": "Self-updating stock", "t75": "What's running low?", "t40": "Supermarket &amp; grocery", "t59": "Users &amp; permissions", "t86": "Want a system for your shop?", "t11": "Get a system for your shop", "t32": "Gallery Ahmed Agour", "t37": "Returns and exchanges", "t63": "Printing &amp; cash drawer", "t80": "I design it for your brand", "t56": "Profit &amp; expenses", "t71": "Paid 850 for electricity", "t82": "I install it in the shop", "t3": "AI Assistant", "t13": "Works offline", "t14": "Android app", "t6": "WhatsApp me", "t41": "Soliman Cashier", "t4": "How it works", "t12": "Ready systems", "t49": "In every system", "t84": "Support &amp; updates", "t15": "AI assistant", "t21": "Clothing store", "t2": "Features", "t90": "Instagram", "t1": "Systems", "t18": "Cashier", "t19": "Profit", "t91": "TikTok", "t0": "Soliman", "t20": "Login", "t78": "We talk", "t88": "WhatsApp", "t89": "Facebook", "t5": "Contact", "mark": "S"};
+const META = {
+  ar: { title: document.title, wa: "https://wa.me/201028715353?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85", btn: 'EN', label: 'English' },
+  en: { title: 'Soliman — POS & ERP Systems', wa: 'https://wa.me/201028715353?text=' + encodeURIComponent("Hi, I saw your portfolio and I'd like a system for my shop"), btn: 'ع', label: 'عربي' },
+};
+const AR = {};
+document.querySelectorAll('[data-t]').forEach(el => { AR[el.dataset.t] = el.innerHTML; });
+function setLang(lang) {
+  const en = lang === 'en';
+  document.documentElement.lang = en ? 'en' : 'ar';
+  document.documentElement.dir = en ? 'ltr' : 'rtl';
+  document.querySelectorAll('[data-t]').forEach(el => { el.innerHTML = (en ? EN : AR)[el.dataset.t]; });
+  const m = META[en ? 'en' : 'ar'];
+  document.title = m.title;
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a => { a.href = m.wa; });
+  const b = document.getElementById('lang-btn');
+  b.textContent = m.btn;
+  b.setAttribute('aria-label', m.label);
+  try { localStorage.setItem('lang', lang); } catch {}
+}
+document.getElementById('lang-btn').addEventListener('click', () => setLang(document.documentElement.lang === 'en' ? 'ar' : 'en'));
+let saved = null;
+try { saved = localStorage.getItem('lang'); } catch {}
+const fromUrl = new URLSearchParams(location.search).get('lang');
+if (fromUrl === 'en' || fromUrl === 'ar') saved = fromUrl;
+if (saved === 'en') setLang('en');
 </script>
 </body>
 </html>
