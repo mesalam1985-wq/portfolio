@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سليمان — أنظمة كاشير و ERP</title>
+<meta name="description" content="أنظمة كاشير (POS) و ERP للمحلات والشركات: بيع بالباركود، مخزون، مرتجعات، مصروفات وأرباح، تطبيق موبايل ومساعد ذكي بالعربي.">
+<meta property="og:title" content="سليمان — أنظمة كاشير و ERP">
+<meta property="og:description" content="شوف الأنظمة اللي اتعملت وجرّبها بنفسك أونلاين.">
+<meta property="og:image" content="img/milano-pos.jpg">
+<meta name="theme-color" content="#0c0d10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0c0d10;
+  --bg-2: #13151a;
+  --card: #171a20;
+  --line: #262a33;
+  --text: #eef0f4;
+  --muted: #9aa1ad;
+  --accent: #4f8cff;
+  --accent-2: #7c5cff;
+  --green: #25d366;
+  --radius: 18px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+.grad { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font: inherit; font-weight: 600; font-size: 15.5px;
+  padding: 13px 22px; border-radius: 12px; border: 1px solid transparent;
+  cursor: pointer; transition: transform .15s, background .15s, border-color .15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+.btn-main { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; box-shadow: 0 10px 30px rgba(79, 140, 255, .3); }
+.btn-wa { background: var(--green); color: #06280f; }
+.btn-ghost { border-color: var(--line); background: rgba(255, 255, 255, .03); }
+.btn-ghost:hover { border-color: #3a404c; }
+
+/* nav */
+.nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); background: rgba(12, 13, 16, .75); border-bottom: 1px solid rgba(255, 255, 255, .06); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+.logo { display: flex; align-items: center; gap: 11px; }
+.logo-mark { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center; font-weight: 700; font-size: 19px; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+.logo b { display: block; font-size: 18px; line-height: 1.1; }
+.logo small { color: var(--muted); font-size: 12px; direction: ltr; display: block; text-align: right; }
+.nav-links { display: flex; gap: 26px; color: var(--muted); font-size: 15px; }
+.nav-links a:hover { color: var(--text); }
+.nav .btn { padding: 9px 16px; font-size: 14px; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; padding: 72px 0 40px; }
+.hero::before {
+  content: ""; position: absolute; inset: -30% -10% auto; height: 700px; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(79, 140, 255, .22), transparent), radial-gradient(closest-side at 70% 40%, rgba(124, 92, 255, .18), transparent);
+}
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+.pill { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: #c9d3e6; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); padding: 5px 13px; border-radius: 999px; }
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(37, 211, 102, .15); }
+.hero h1 { font-size: clamp(34px, 5vw, 56px); line-height: 1.25; margin: 18px 0 16px; font-weight: 700; }
+.hero p.lead { color: var(--muted); font-size: 18px; margin: 0 0 28px; max-width: 540px; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 38px; max-width: 560px; }
+.stat { border: 1px solid var(--line); background: rgba(255, 255, 255, .02); border-radius: 14px; padding: 12px; text-align: center; }
+.stat b { display: block; font-size: 22px; }
+.stat span { color: var(--muted); font-size: 12.5px; }
+
+.devices { position: relative; padding-bottom: 30px; }
+.laptop { border-radius: 14px; border: 1px solid #2c313b; background: #0a0b0d; padding: 8px; box-shadow: 0 40px 80px rgba(0, 0, 0, .55); transform: perspective(1400px) rotateY(8deg); }
+.laptop img { border-radius: 8px; }
+.phone {
+  position: absolute; left: -22px; bottom: -10px; width: 23%; min-width: 96px;
+  border-radius: 26px; border: 6px solid #1f232b; background: #000; overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .6);
+}
+.phone img { aspect-ratio: 386 / 760; object-fit: cover; object-position: top; width: 100%; }
+
+/* sections */
+section { padding: 70px 0; }
+.sec-head { text-align: center; max-width: 680px; margin: 0 auto 42px; }
+.sec-head .kicker { color: var(--accent); font-weight: 600; font-size: 14px; letter-spacing: .5px; }
+.sec-head h2 { font-size: clamp(28px, 3.6vw, 40px); margin: 6px 0 10px; line-height: 1.3; }
+.sec-head p { color: var(--muted); margin: 0; font-size: 17px; }
+
+/* projects */
+.project { display: grid; grid-template-columns: 1.25fr 1fr; gap: 34px; align-items: center; padding: 28px; border: 1px solid var(--line); background: linear-gradient(180deg, var(--card), var(--bg-2)); border-radius: 24px; margin-bottom: 26px; }
+.project:nth-child(even) .shots { order: 2; }
+.shots { min-width: 0; }
+.shot-main { border-radius: 14px; overflow: hidden; border: 1px solid #2a2f39; background: #000; aspect-ratio: 16 / 10; }
+.shot-main img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: opacity .2s; }
+.shot-tabs { display: flex; gap: 8px; margin-top: 12px; }
+.shot-tabs button {
+  flex: 1; font: inherit; font-size: 13.5px; color: var(--muted); cursor: pointer;
+  background: rgba(255, 255, 255, .03); border: 1px solid var(--line); border-radius: 10px; padding: 7px 6px;
+}
+.shot-tabs button.on { color: #fff; border-color: var(--p); background: color-mix(in srgb, var(--p) 18%, transparent); }
+.p-type { display: inline-block; font-size: 13px; font-weight: 600; color: var(--p); border: 1px solid color-mix(in srgb, var(--p) 45%, transparent); border-radius: 999px; padding: 3px 12px; }
+.project h3 { font-size: 28px; margin: 12px 0 6px; line-height: 1.3; }
+.project p { color: var(--muted); margin: 0 0 16px; }
+.feat { list-style: none; padding: 0; margin: 0 0 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; font-size: 14.5px; }
+.feat li { display: flex; gap: 8px; align-items: flex-start; }
+.feat li::before { content: ""; flex: none; width: 18px; height: 18px; margin-top: 4px; border-radius: 6px; background: color-mix(in srgb, var(--p) 22%, transparent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center / 12px no-repeat; }
+.p-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.p-actions .btn-try { background: var(--p); color: #fff; }
+.swatches { display: flex; gap: 6px; margin-inline-start: auto; align-items: center; }
+.swatches i { width: 18px; height: 18px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .2); }
+
+/* features */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.box { border: 1px solid var(--line); background: var(--card); border-radius: var(--radius); padding: 22px; transition: border-color .2s, transform .2s; }
+.box:hover { border-color: #39404d; transform: translateY(-3px); }
+.box .ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(79, 140, 255, .12); color: #8db4ff; margin-bottom: 14px; }
+.box .ic svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.box h4 { margin: 0 0 6px; font-size: 18px; }
+.box p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+/* AI chat demo */
+.ai { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.ai h2 { font-size: clamp(28px, 3.6vw, 40px); line-height: 1.3; margin: 6px 0 12px; }
+.ai p { color: var(--muted); font-size: 17px; }
+.chat { border: 1px solid var(--line); background: var(--card); border-radius: 22px; padding: 18px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); }
+.msg { max-width: 85%; padding: 10px 14px; border-radius: 16px; font-size: 15px; }
+.msg.u { align-self: flex-start; background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; border-end-start-radius: 4px; }
+.msg.b { align-self: flex-end; background: #20242c; border: 1px solid var(--line); border-end-end-radius: 4px; }
+.msg.b b { color: #6ee7a8; }
+
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: s; }
+.step { position: relative; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: var(--bg-2); }
+.step::before { counter-increment: s; content: counter(s); position: absolute; top: -14px; inset-inline-start: 18px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: 14px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+.step h4 { margin: 8px 0 4px; font-size: 17px; }
+.step p { margin: 0; color: var(--muted); font-size: 14.5px; }
+
+/* contact */
+.contact { text-align: center; border: 1px solid var(--line); border-radius: 28px; padding: 54px 24px; background: radial-gradient(circle at 50% 0, rgba(79, 140, 255, .18), transparent 60%), var(--card); }
+.contact h2 { font-size: clamp(28px, 3.6vw, 42px); margin: 0 0 10px; }
+.contact p { color: var(--muted); margin: 0 0 28px; font-size: 17px; }
+.socials { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.soc { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); font-weight: 600; transition: transform .15s, border-color .15s; }
+.soc:hover { transform: translateY(-2px); border-color: #3a404c; }
+.soc svg { width: 22px; height: 22px; }
+.soc.wa { background: var(--green); color: #06280f; border-color: var(--green); }
+footer { color: #6b7280; font-size: 13.5px; text-align: center; padding: 30px 0 40px; }
+
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+@media (max-width: 960px) {
+  .hero .wrap, .project, .ai { grid-template-columns: 1fr; }
+  .project:nth-child(even) .shots { order: 0; }
+  .grid { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 26px; }
+  .nav-links { display: none; }
+  .laptop { transform: none; }
+}
+@media (max-width: 600px) {
+  .hero { padding-top: 40px; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .grid, .steps, .feat { grid-template-columns: 1fr; }
+  .project { padding: 16px; border-radius: 18px; }
+  .project h3 { font-size: 24px; }
+  .nav .btn span { display: none; }
+  .phone { width: 27%; left: -4px; }
+  section { padding: 50px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="logo-mark">س</span><span><b>سليمان</b><small>ERP &amp; POS Systems</small></span></a>
+    <nav class="nav-links">
+      <a href="#work">الأنظمة</a>
+      <a href="#features">المميزات</a>
+      <a href="#ai">المساعد الذكي</a>
+      <a href="#how">إزاي بنشتغل</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/201028715353?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.1z"/></svg>
+      <span>كلمني واتساب</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="pill"><i></i> أنظمة شغالة فعلاً في محلات</span>
+        <h1>سيستم كاشير و ERP<br><span class="grad">على مقاس محلك</span></h1>
+        <p class="lead">بعمل أنظمة بيع ومخزون وحسابات للمحلات والشركات: بيع بالباركود، مرتجعات، مصروفات وأرباح، تطبيق موبايل، ومساعد ذكي بيفهم عربي. كل سيستم بشكل وهوية محلك.</p>
+        <div class="hero-cta">
+          <a class="btn btn-main" href="#work">شوف الأنظمة وجرّبها</a>
+          <a class="btn btn-ghost" href="#contact">اطلب سيستم لمحلك</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>+3</b><span>أنظمة جاهزة</span></div>
+          <div class="stat"><b>100%</b><span>من غير إنترنت</span></div>
+          <div class="stat"><b>📱</b><span>تطبيق أندرويد</span></div>
+          <div class="stat"><b>✨</b><span>مساعد ذكي</span></div>
+        </div>
+      </div>
+      <div class="devices reveal">
+        <div class="laptop"><img src="img/milano-pos.jpg" alt="شاشة الكاشير في سيستم ميلانو" width="1200" height="750"></div>
+        <div class="phone"><img src="img/milano-phone.jpg" alt="السيستم على الموبايل" width="386" height="840"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- projects -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">الأنظمة</div>
+        <h2>أنظمة اتعملت لمحلات حقيقية</h2>
+        <p>كل سيستم ليه نسخة تجريبية أونلاين — ادخل بضغطة وجرّب البيع والتقارير بنفسك.</p>
+      </div>
+
+      <article class="project reveal" style="--p:#c0283a">
+        <div class="shots" data-sys="milano">
+          <div class="shot-main"><img src="img/milano-pos.jpg" alt="ميلانو — الكاشير" loading="lazy"></div>
+          <div class="shot-tabs"><button class="on" data-img="pos">الكاشير</button><button data-img="profit">الأرباح</button><button data-img="login">الدخول</button></div>
+        </div>
+        <div>
+          <span class="p-type">محل ملابس</span>
+          <h3>ميلانو — سيستم محل هدوم</h3>
+          <p>تصميم أبيض وأسود بلمسة أحمر إيطالي. كل قطعة بمقاسها ولونها ومخزونها، والفاتورة بتطبع <span dir="rtl" style="unicode-bidi:isolate;white-space:nowrap">"قميص — L / أبيض"</span>.</p>
+          <ul class="feat">
+            <li>مقاسات وألوان لكل قطعة</li>
+            <li>زرار "مقاس تاني" بضغطة</li>
+            <li>بحث بالاسم أو المقاس أو اللون</li>
+            <li>مساعد ذكي بالعامية</li>
+            <li>كاش / فيزا / تحويل / محفظة</li>
+            <li>تقارير أرباح ومصروفات</li>
+          </ul>
+          <div class="p-actions">
+            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/milano-store/" target="_blank" rel="noopener">جرّب النسخة التجريبية ↗</a>
+            <div class="swatches"><i style="background:#141414"></i><i style="background:#f4f2ee"></i><i style="background:#b4232c"></i></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project reveal" style="--p:#c08f42">
+        <div class="shots" data-sys="gallery">
+          <div class="shot-main"><img src="img/gallery-pos.jpg" alt="جاليري — الكاشير" loading="lazy"></div>
+          <div class="shot-tabs"><button class="on" data-img="pos">الكاشير</button><button data-img="profit">الأرباح</button><button data-img="login">الدخول</button></div>
+        </div>
+        <div>
+          <span class="p-type">جاليري أدوات منزلية وهدايا</span>
+          <h3>جاليري أحمد عجور</h3>
+          <p>كحلي ودهبي بشكل فخم. بيع بالباركود، مخزون بيتظبط لوحده، ومساعد ذكي تقوله "دفعت كهربا 850" يسجلها على طول.</p>
+          <ul class="feat">
+            <li>تطبيق أندرويد شغال من غير نت</li>
+            <li>فتح من الموبايل بـ QR</li>
+            <li>درج فلوس بيفتح مع الكاش</li>
+            <li>مرتجعات واستبدال</li>
+            <li>مصروفات ثابتة ومتغيرة</li>
+            <li>صلاحيات مدير وكاشير</li>
+          </ul>
+          <div class="p-actions">
+            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/gallery-store/" target="_blank" rel="noopener">جرّب النسخة التجريبية ↗</a>
+            <div class="swatches"><i style="background:#16182a"></i><i style="background:#b8873a"></i><i style="background:#f5f2ec"></i></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project reveal" style="--p:#4f8cff">
+        <div class="shots" data-sys="soliman">
+          <div class="shot-main"><img src="img/soliman-pos.jpg" alt="سليمان كاشير — الكاشير" loading="lazy"></div>
+          <div class="shot-tabs"><button class="on" data-img="pos">الكاشير</button><button data-img="profit">الأرباح</button><button data-img="login">الدخول</button></div>
+        </div>
+        <div>
+          <span class="p-type">سوبر ماركت وبقالة</span>
+          <h3>سليمان كاشير</h3>
+          <p>سيستم سريع بثيم غامق للسوبر ماركت: امسح الباركود واضغط Enter، والفاتورة الكبيرة في نص الشاشة. Enter للبيع و F9 للبيع والطباعة.</p>
+          <ul class="feat">
+            <li>بيع بالباركود أو بالاسم</li>
+            <li>"صنف بسعر" لأي حاجة من غير باركود</li>
+            <li>طباعة فاتورة 80مم أو A4</li>
+            <li>كذا كاشير على كذا جهاز</li>
+            <li>تقرير مين شغال دلوقتي</li>
+            <li>برنامج على الديسكتوب بأيقونة</li>
+          </ul>
+          <div class="p-actions">
+            <a class="btn btn-try" href="https://mesalam1985-wq.github.io/pos-system/" target="_blank" rel="noopener">جرّب النسخة التجريبية ↗</a>
+            <div class="swatches"><i style="background:#0f1117"></i><i style="background:#4f8cff"></i><i style="background:#3ccf73"></i></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- features -->
+  <section id="features" style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">في كل سيستم</div>
+        <h2>كل اللي المحل محتاجه في مكان واحد</h2>
+        <p>من أول ما الزبون يدفع لحد ما تعرف كسبت كام آخر الشهر.</p>
+      </div>
+      <div class="grid">
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M7 8v8M10.5 8v8M14 8v8M17 8v8"/></svg></div><h4>بيع سريع بالباركود</h4><p>امسح واضغط Enter. أو اكتب أول حرفين من الاسم والمنتج يطلع.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div><h4>مخزون بيتظبط لوحده</h4><p>كل بيعة ومرتجع بيعدّل الكمية، وتنبيه للحاجات اللي قربت تخلص.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><h4>أرباح ومصروفات</h4><p>إيجار ومرتبات وكهربا، وتقرير يقولك كسبت كام في اليوم والأسبوع والشهر.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/></svg></div><h4>مرتجعات واستبدال</h4><p>دوّر برقم الفاتورة أو كود المنتج، ورجّع فلوس أو بدّل بفرق السعر.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></svg></div><h4>مستخدمين وصلاحيات</h4><p>مدير وكاشير، كل واحد بباسورده، وتشوف مين شغال على أنهي جهاز.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div><h4>موبايل وتطبيق أندرويد</h4><p>افتح السيستم من الموبايل بـ QR على واي فاي المحل، أو تطبيق شغال لوحده من غير نت.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg></div><h4>طباعة ودرج فلوس</h4><p>فاتورة حرارية 80مم أو A4، والدرج بيفتح لوحده لما الدفع يكون كاش.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.5 12 4l7 8.5"/><path d="M7 11v9h10v-9"/></svg></div><h4>من غير إنترنت</h4><p>السيستم شغال على كمبيوتر المحل نفسه، والبيانات عندك إنت مش على سيرفر بره.</p></div>
+        <div class="box reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><h4>برنامج على الديسكتوب</h4><p>أيقونة على سطح المكتب وتسطيب بضغطة، وتحديث من غير ما البيانات تضيع.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI -->
+  <section id="ai">
+    <div class="wrap ai">
+      <div class="reveal">
+        <div class="sec-head" style="text-align:right;margin:0"><div class="kicker">المساعد الذكي</div></div>
+        <h2>كلّم السيستم <span class="grad">بالعامية</span></h2>
+        <p>من غير ما تدوّر في القوايم: اكتب أو اتكلم، والمساعد يسجّل المصروف، يعدّل السعر، يزوّد المخزون، أو يقولك الأرباح كام — في ثانية.</p>
+        <a class="btn btn-ghost" href="https://mesalam1985-wq.github.io/milano-store/" target="_blank" rel="noopener">جرّبه في النسخة التجريبية ↗</a>
+      </div>
+      <div class="chat reveal" aria-label="مثال محادثة">
+        <div class="msg u">دفعت كهربا 850</div>
+        <div class="msg b">تمام ✅ سجلت مصروف <b>كهرباء 850 ج.م</b> بتاريخ النهارده.</div>
+        <div class="msg u">الأرباح كام الأسبوع ده؟</div>
+        <div class="msg b">صافي الربح الأسبوع ده <b>19,830 ج.م</b> — المبيعات 64,020 والمصروفات 4,170.</div>
+        <div class="msg u">إيه اللي قرب يخلص؟</div>
+        <div class="msg b">3 حاجات: فستان سواريه S (2)، جاكيت جلد L (4)، قميص كتان L كحلي (3).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- how -->
+  <section id="how" style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="kicker">إزاي بنشتغل</div>
+        <h2>من أول كلمة لحد ما السيستم يشتغل في المحل</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h4>بنتكلم</h4><p>تقولي نوع المحل وبتبيع إيه ومحتاج إيه بالظبط.</p></div>
+        <div class="step reveal"><h4>بصمم بهوية محلك</h4><p>اسمك وألوانك ولوجو المحل، وتجرّب نسخة تجريبية أونلاين.</p></div>
+        <div class="step reveal"><h4>بركّب في المحل</h4><p>على الكمبيوتر والموبايل، مع الطابعة والدرج والباركود.</p></div>
+        <div class="step reveal"><h4>دعم وتطوير</h4><p>أي حاجة جديدة محتاجها بنضيفها، وبياناتك محفوظة.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact reveal">
+        <h2>عايز سيستم لمحلك؟</h2>
+        <p>ابعتلي على أي حاجة من دول ونتكلم.</p>
+        <div class="socials">
+          <a class="soc wa" href="https://wa.me/201028715353?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D9%88%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%B3%D9%8A%D8%B3%D8%AA%D9%85" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.1z"/></svg>واتساب</a>
+          <a class="soc" href="https://www.facebook.com/share/1FXDF6YBbi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#1877f2"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg>فيسبوك</a>
+          <a class="soc" href="https://www.instagram.com/system8987" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="#e4405f" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#e4405f"/></svg>إنستجرام</a>
+          <a class="soc" href="https://www.tiktok.com/@system.y5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9a7.3 7.3 0 0 0 4.3 1.4V7.3a4.3 4.3 0 0 1-3.2-1.5z"/></svg>تيك توك</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> سليمان — ERP &amp; POS Systems</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+// تبديل صور كل سيستم
+document.querySelectorAll('.shots').forEach(box => {
+  const img = box.querySelector('.shot-main img');
+  box.querySelectorAll('.shot-tabs button').forEach(b => b.addEventListener('click', () => {
+    box.querySelectorAll('.shot-tabs button').forEach(x => x.classList.toggle('on', x === b));
+    img.style.opacity = .3;
+    const next = new Image();
+    next.onload = () => { img.src = next.src; img.style.opacity = 1; };
+    next.src = `img/${box.dataset.sys}-${b.dataset.img}.jpg`;
+  }));
+});
+// ظهور العناصر وانت بتنزل
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .12 }) : null;
+document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+</script>
+</body>
+</html>
